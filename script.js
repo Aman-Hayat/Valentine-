@@ -81,40 +81,23 @@ function displayCatHeart() {
 // Function to create "i love you" text scattered all over the screen
 function createLoveTexts() {
     var textContainer = document.getElementById('love-text-container');
-    var numberOfTexts = 180; // Number of "i love you" texts to display
+    var rows = 20; // Number of rows
     
-    console.log('Creating ' + numberOfTexts + ' love texts'); // Debug message
+    console.log('Creating love text rows'); // Debug message
     
-    // Create a perfect grid distribution with NO randomness
-    var columns = 15; // 15 columns
-    var rows = 12;    // 12 rows
-    
-    for (var i = 0; i < numberOfTexts; i++) {
-        var loveText = document.createElement('div');
-        loveText.className = 'love-text';
-        loveText.innerText = 'i love you';
+    for (var row = 0; row < rows; row++) {
+        var rowDiv = document.createElement('div');
+        rowDiv.className = 'love-text-row';
+        rowDiv.style.top = (row * 5) + '%'; // Distribute rows vertically
         
-        // Calculate grid position
-        var col = i % columns;
-        var row = Math.floor(i / columns);
+        // Create one long line of "i love you" repeated
+        var lineText = '';
+        for (var i = 0; i < 20; i++) { // Repeat "i love you" 20 times per row
+            lineText += 'i love you   ';
+        }
+        rowDiv.innerText = lineText;
         
-        // Perfect even distribution - NO randomness
-        var baseLeft = (col * 6.67) + 1; // Distribute evenly across width (100/15 = 6.67)
-        var baseTop = (row * 8.33) + 1;  // Distribute evenly across height (100/12 = 8.33)
-        
-        loveText.style.left = baseLeft + '%';
-        loveText.style.top = baseTop + '%';
-        
-        // Keep text horizontal (no rotation)
-        loveText.style.transform = 'none';
-        
-        // Fixed font size for consistency
-        loveText.style.fontSize = '24px';
-        
-        // Fixed opacity
-        loveText.style.opacity = 0.5;
-        
-        textContainer.appendChild(loveText);
+        textContainer.appendChild(rowDiv);
     }
     console.log('Finished creating love texts'); // Debug message
 }
