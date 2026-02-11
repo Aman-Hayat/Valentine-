@@ -59,9 +59,9 @@ button {
 
 .love-text-row {
     position: absolute; /* Position each row absolutely */
-    left: 0;
-    width: 200%; /* Make it wider than screen to ensure coverage */
-    font-family: 'Sacramento', cursive; /* Match the main font */
+    left: -10%; /* Start from beyond the left edge */
+    width: 120%; /* Make it wider than screen to ensure full coverage */
+    font-family: 'Dancing Script', cursive; /* Match the main font */
     font-size: 24px;
     color: #FF69B4; /* Hot pink color */
     white-space: nowrap; /* Prevent text wrapping */
