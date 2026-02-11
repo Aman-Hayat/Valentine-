@@ -57,6 +57,18 @@ button {
     user-select: none; /* Prevent text selection */
 }
 
+.love-text-row {
+    position: absolute; /* Position each row absolutely */
+    left: 0;
+    width: 200%; /* Make it wider than screen to ensure coverage */
+    font-family: 'Sacramento', cursive; /* Match the main font */
+    font-size: 24px;
+    color: #FF69B4; /* Hot pink color */
+    white-space: nowrap; /* Prevent text wrapping */
+    user-select: none; /* Prevent text selection */
+    opacity: 0.45;
+}
+
 #container {
     position: relative; /* Make container positioned */
     z-index: 10; /* Bring main content to front */
